@@ -2,9 +2,9 @@ local Bloom = Class('Bloom')
 
 function Bloom:initialize(time, startRadius, endRadius)
     self.timePassed = 0
-    self.bloomTime = 1
-    self.startRadius = 10
-    self.endRadius = 30
+    self.bloomTime = time
+    self.startRadius = startRadius
+    self.endRadius = endRadius
     self.radius = self.startRadius
 end
 
