@@ -1,8 +1,10 @@
 Class = require  'lib/middleclass'
-local Flower = require 'Flower'
+--local Flower = require 'Flower'
+local Arrangement = require 'Arrangement'
 
 local flowers
 local mouseDown = false
+local arrangement = Arrangement:new()
 local lastposition = {X = nil, Y = nil}
 
 function love.load()
@@ -22,7 +24,7 @@ function love.update(dt)
     end
     local x,y = love.mouse.getPosition()
     if mouseDown and sufficientDistance(x, y) then
-        table.insert(flowers, Flower:new(x, y))
+        table.insert(flowers, arrangement:newFlower(x, y))
         lastposition.x = x
         lastposition.y = y
     end
@@ -31,7 +33,7 @@ end
 function sufficientDistance(x, y)
     if lastposition.x == nil then return true end
     local distance = math.sqrt(((x - lastposition.x)*(x - lastposition.x)) + ((y - lastposition.y)*(y - lastposition.y)))
-    return distance > 45
+    return distance > 17
 end
 
 function love.mousepressed(x,y)

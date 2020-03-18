@@ -1,13 +1,13 @@
 local Petal = require 'Petal'
 local Petals = Class('Petals')
 
-function Petals:initialize(count) -- types of petal?
+function Petals:initialize(count, rgba) -- types of petal?
     self.count = count
     self.angle = (2 * math.pi)/self.count
     self.rotation = math.random() * 2 * math.pi
     petals = {}
     for i = 0, self.count do
-        table.insert(petals, Petal:new())
+        table.insert(petals, Petal:new(rgba))
     end
 end
 
