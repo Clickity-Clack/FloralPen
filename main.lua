@@ -31,13 +31,13 @@ end
 function sufficientDistance(x, y)
     if lastposition.x == nil then return true end
     local distance = math.sqrt(((x - lastposition.x)*(x - lastposition.x)) + ((y - lastposition.y)*(y - lastposition.y)))
-    return distance > 25
+    return distance > 45
 end
 
 function love.mousepressed(x,y)
     mouseDown = true
-    lastposition.x = x
-    lastposition.y = y
+    lastposition.x = nil
+    lastposition.y = nil
 end
 
 function love.mousereleased(x,y)
