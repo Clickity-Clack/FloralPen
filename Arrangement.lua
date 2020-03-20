@@ -6,13 +6,9 @@ function Arrangement:initialize()
 end
 
 function Arrangement:newFlower(x, y)
-    return Flower:new(x, y, self.colors[RandomTo(#self.colors)])
+    return Flower:new(x, y, self.colors[math.random(1, #self.colors)])
 end
 
-function RandomTo(b)
-    local a = math.ceil(math.random() * b)
-    return (a % b) + 1
-end
 -- collection of flower types
 -- determine when to place flowers (spacing) + which flower type to place
 

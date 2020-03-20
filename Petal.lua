@@ -1,7 +1,7 @@
 local Petal = Class('Petal')
 
 function Petal:initialize(rgba)
-    self.rgba = rgba--{rgba[1], rgba[2], rgba[3], rgba[4]}
+    self.rgba = rgba
     self.r = 0
     self.v = 0
     self.model = nil

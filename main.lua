@@ -45,3 +45,9 @@ end
 function love.mousereleased(x,y)
     mouseDown = false
 end
+
+function love.keypressed(k)
+    if k == 'c' then
+        flowers = {}
+    end
+end
